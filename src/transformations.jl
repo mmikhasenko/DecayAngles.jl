@@ -18,7 +18,7 @@ end
 function HelicityTransformation(; p, isfirst = true)
     ϕ = azimuthal_angle(p)
     θ = polar_angle(p)
-    if pt(p) < 1e-10
+    if transverse_momentum(p) < 1e-10
         ϕ, θ = 0.0, 0.0
     end
     γ = boost_gamma(p)
