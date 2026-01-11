@@ -23,16 +23,20 @@
 
 ## Installation
 
-To install **NestedDecayTrees.jl**, you can add the package via the Julia package manager:
+This package depends on `FourVectors.jl`, which is an unregistered package from GitHub:
 
-```julia
-] add https://github.com/yourusername/NestedDecayTrees.jl
-```
-the package depends on a few none registered packages, they also need to be installed,
-```
-] add https://github.com/JuliaHEP/LorentzVectorBase.jl
-] add https://github.com/mmikhasenko/FourVectors.jl
-```
+- **If `Manifest.toml` is present** (as in this repository): The unregistered package will be automatically installed when you add `NestedDecayTrees.jl` to your environment, as the manifest includes the exact dependency information.
+  ```julia
+  using Pkg
+  Pkg.add(url="https://github.com/mmikhasenko/NestedDecayTrees.jl.git")
+  ```
+
+- **If using a different setup without the manifest**: You need to manually install `FourVectors.jl` before adding `NestedDecayTrees.jl`:
+  ```julia
+  using Pkg
+  Pkg.add(url="https://github.com/mmikhasenko/FourVectors.jl.git")
+  Pkg.add(url="https://github.com/mmikhasenko/NestedDecayTrees.jl.git")
+  ```
 
 ## Usage
 
